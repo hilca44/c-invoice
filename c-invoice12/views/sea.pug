@@ -1,0 +1,51 @@
+extends layout
+
+block content
+
+    //- div#d2 
+    //- p
+    //-     input#c9(type="search" name="inpp" size="15" value="" autofocus)
+    //- var h = hh
+    if s.r[0].sw != null
+        p.inl.g Filter: #{s.r[0].sw} 
+        p.inl zum loeschen: leeres Feld und Enter
+    p ord3pug
+    hr
+    div#d1
+        div.pp
+            each v in s.c[0].seaa
+
+                - oo=s.c[0].seaa.indexOf(v)
+
+                div.pp
+                    a.inl(id="i"+oo href="form.html?t="+s.r[0].t+"&id="+v) #{oo}
+                    - var out=""
+                    each vv,kk in s[s.r[0].t][v]
+                        - out += "<span class='r'>"+kk+":</span>"
+                        - reg = s.c[0].Regex2
+                            if - /ida/.test(kk)
+                                - vv=s.a[vv]["adr"]
+                            if - reg.test(vv)
+                                - v3 = String(vv).split(reg)
+                                //- - var nn =[]
+                                //- - for(let e of v3){
+                                //-     -let gg=e.split(" ")
+                                //-     -let gl=[]
+                                //-     -nn.push(gg.splice(2,gg.length-4).join(" "))
+                                //-     -}
+                                //- p.inl.r #{kk+":"}
+                                - var vv2=v3.join('<span id="find">'+s.r[0].sw+'</span>' )
+                                //- p.inl !{vv2} 
+                                - out+=vv2
+                            else 
+                                //- p.inl.r #{kk+":"}
+                                if  - typeof vv=="string"
+                                    - vv2=vv.slice(0,21)
+                                else
+                                    - vv2=vv
+                                if  vv.length>vv2.length
+                                    -vv2+="..."
+                                //- p.inl #{vv2}
+                                - out+=vv2 + " "
+                    p.inl !{out}
+                br

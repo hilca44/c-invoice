@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  div
+  p
+  hr
+  table 
+    tr
+      td
+        each mv, mk in c.hmen 
+          h1.inl
+            span.g #{mk}
+            a(href=mv.url id="i"+mv.descr) #{mv.descr} 
+        if  Object.keys(c.frm).length>1
+          a(href="removefromview.html?id="+rrk) remove from view
+        - var nex=eval(Number(r.id)+1)
+        - var pre=eval(Number(r.id)-1)
+        a.inl( href="form.html?t="+r.t+"&id="+nex)  #{nex}
+        a.inl( href="form.html?t="+r.t+"&id="+pre)  #{pre}
+        br
+
+        form(id="fff1" name=nme action="wFile.html?"  method="get")
+          p.inl sub
+          input(type="submit", value="submit cp="+c.cp)
+          input(type="hidden", name="t", value=r.t)
+          input(type="hidden", name="cp", value=r.cp)
+          br
+          each v,k in [r.t]["0"]
+            p.inl #{k}
+            if k=="ite" || k=="adr"
+              textarea(type="text" cols='auto' rows=9 id=k name=k value=v) #{v}
+            else if k=="iii"
+              input(type="text" id=k name=k value=v readonly)
+            else
+              input(type="text" id=k name=k value=v)
+            br
+
+          br
+

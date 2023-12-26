@@ -1,0 +1,55 @@
+extends layout
+
+block content
+  div
+  p
+  hr
+  each idd in s.n[0].reca
+        if idd!=""
+
+          - oo=s.n[0].reca.indexOf(idd)
+
+          - var ade=s.n[0].abbre(s.a[idd].adr,11,2)
+          a(id="i"+oo href="newexp.html?t=e&ida="+idd) #{oo+"_"+ade}
+  table 
+    tr
+      each rrk in s.n[0].frm
+        if s.c[0].cp==2
+          - var rr=s[s.r[0].t.toUpperCase()][0]
+          if rr["ida"]
+              - rr["ida"]=s.r[0]["ida"]
+        else 
+          - rr=s[s.r[0].t][rrk]
+        td
+          each mv, mk in s.c[0].hmen 
+            h1.inl
+              span.g #{mk}
+              a(href=mv.url id="i"+mv.descr) #{mv.descr} 
+
+          if  Object.keys(s.n[0].frm).length>1
+            a(href="removefromview.html?id="+rrk) remove from view
+          - var nex=eval(Number( s.r[0].id)+1)
+          - var pre=eval(Number( s.r[0].id)-1)
+          a.inl( href="form.html?t="+ s.r[0].t+"&id="+nex)  #{nex}
+          a.inl( href="form.html?t="+ s.r[0].t+"&id="+pre)  #{pre}
+          br
+
+          form(id="fff1" name=nme action="wFile.html?"  method="get")
+            p.inl sub 
+            - var ccp=["edit", "copy", "new"]
+            input(type="submit", value=ccp[s.c[0].cp])
+            input(type="hidden", name="t", value= s.r[0].t)
+            input(type="hidden", name="cp", value= s.r[0].cp)
+            br
+            each v,k in s[s.r[0].t.toUpperCase()][0]
+              p.inl #{k}
+              if k=="ite" || k=="adr"
+                textarea(type="text" cols='auto' rows=9 id=k name=k value=v) #{rr[k]}
+              else if k=="iii"
+                input(type="text" id=k name=k value=rr[k] readonly)
+              else
+                input(type="text" id=k name=k value=rr[k])
+              br
+
+            br
+

@@ -1,0 +1,75 @@
+extends layout
+
+block content
+    div
+        each v,k in s.c[0].hmen 
+            h1.inl
+                span.g #{k}
+                a(href=v.url id="i"+v.descr) #{v.descr}
+  
+    div#d1
+        if(rowsadr)
+
+            if(hh.aiii)
+                a.inl(href="form.html?t=adr&id="+hh.aiii)  #{hh.aiii}             
+                p.inl #{hh.surname}
+            else
+                - var o = rowsadr
+                each val in o
+                    p.inl #{val}
+  
+    div#d5
+        if count 
+            p Rows: #{count}
+    //- - pre #{oos}
+    div
+        if rr != ""
+            pre !{s.c[0].sf}
+
+        else if rows
+            - var i=0
+            each v in rows
+                a(href="#"+i) #{v}
+                br
+                - i++
+                div
+                    each vv,kk in v
+                        if - /.iii/.test(kk) 
+                           
+                            p.inl.g no-id_
+                        
+                        else 
+                            - var vvv=prbo(kk, 12,"l","_")
+                            p.inl.g #{vvv}
+                - break
+                    
+            each v,k in rows
+                div
+
+                    each vv,kk in v
+
+                        if - /.iii/.test(kk) 
+                           
+                            a.inl(id="i"+k href="form.html?t="+t+"&cmd=id-"+vv+"&id="+vv)  #{k+"-"+vv}
+                        
+                        else 
+                            - let vv2=vv
+                            if - /oite/.test(kk) 
+                                span 
+                                //- div(id="a"+k class="page") 
+                            else
+                                if  vv != null 
+                                    - var ll =12
+                                    if vv.toString().length > 22222222
+                                        - ll=20
+                                    - var vvv=prbo(vv, ll,"l",".")
+                                    //- p.inl #{ kk.slice(1)+": "+vv}
+                                    p.inl #{vvv}
+
+   
+                    if - Object.keys(v).includes("oite")
+                        //- - var tit = ""
+                        //- - vv2 = v["oite"].split("\n")
+                        //- each rr in vv2
+                        //-     - rr = rr.slice(0,30)
+                        //-     p.tabb #{"-->"+rr}

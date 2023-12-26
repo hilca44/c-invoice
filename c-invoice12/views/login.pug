@@ -1,0 +1,23 @@
+doctype html 
+html
+  head
+    title Faktura 3.01
+    link(rel='stylesheet', href="/public/css/simple.css")
+    script(src="/public/jquery-3.6.3.js")
+  body
+    h1 Login 
+    p #{message}
+    p try 
+    a(href="/restricted/") /restricted/
+
+    form(action="/login", method="post") 
+
+        label(for="username") Username: 
+        input(type="text" name="username" id="username")
+        br
+        br
+        label(for="password") Password: 
+        input(type="password" name="password" id="password")
+        br
+        label(for="submit") submit: 
+        input(type="submit" value="Login" autofocus)

@@ -1,0 +1,51 @@
+doctype html 
+html
+  head
+    link(rel='stylesheet', href="/public/css/simple.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js")
+    script(src="/routes/index.js")
+    script(src="/public/mod.js")
+    script(src="/public/loc.js")
+    title #{s.c[0].scrnme}
+  body
+
+    - var men = men 
+    div.parent1
+    
+      div.div11
+        p#tbkkl #{dd}
+        p#tbl #{ s.r[0].t}
+        h1.inl
+          input#c9(type="search" name="inpp" value="" title="ESC=focus" autofocus="autofocus")
+          a(href="#" onclick="window.history.back()") back
+      
+        - var ig=6
+        - var i=0
+        each v,k in s.c[0].mainmen 
+          h1.inl
+            span.g #{k}
+              //- - var menud=mendoo2[k].descr
+              //- a( onclick="cmd3(\""+k+"\")" ) #{menud}
+              a(href=v.url id="i"+v.descr) #{v.descr}
+        p ord: 
+          each id1 in s.n[0].reco
+            - var ode=s.n[0].abbre(s.o[id1].ord,18,2)
+            a(href="form.html?t=o&id="+id1) #{ode},
+        p adr: 
+          each idd in s.n[0].reca
+            if idd!=""
+              - var ade=s.n[0].abbre(s.a[idd].adr,18,2)
+              a(href="form.html?t=a&id="+idd) #{ade},
+        p Add orders=#{s.c[0].addto}
+      block content
+    
+    block foot
+
+      #footer
+      p some footer content
+      p #{u}
+   
+
+
+
+        

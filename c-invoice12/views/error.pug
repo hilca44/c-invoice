@@ -1,0 +1,27 @@
+doctype html 
+html
+  head
+    title c-invoice
+    link(rel='stylesheet', href="/public/css/simple.css")
+    script(src="/public/jquery-3.6.3.js")
+    script(src="/public/loc.js")
+  body
+
+
+    //- div#d2 
+    //- p
+    //-     input#c9(type="search" name="inpp" size="15" value="" autofocus)
+    res #{mes}
+    pre #{err}
+    res #{error}
+    if error.stack
+    pre !{error.stack}
+    pre !{rr}
+    
+    
+    br
+    
+    
+    a.big(href="#" onclick="window.history.back()") back
+          
+

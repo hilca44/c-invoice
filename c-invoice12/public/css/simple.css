@@ -1,0 +1,222 @@
+/* /* :root{
+
+  --col: orange;
+  --bg: #212121;
+  --fs: large;
+  --fs1: 1.2em;
+  --fs2: 1.3em;
+  --wi1: 100%;
+  --wi: 100%;
+} */
+
+
+/* @media only screen and (max-width: 1100px) {
+  :root{
+    
+    --col: rgb(255, 0, 157);
+    --bg: #212121;
+     --fs: 100%; 
+    --wi: 100%;
+  }
+} */
+html, body{
+  width: 100%;
+}
+*{
+  margin: 0;
+  /* padding: 2px; */
+  color:lightgrey;
+  font-family:monospace;
+  font-size:  0.95rem;
+overflow-wrap: break-word;
+
+}
+
+.aa{
+  border-left: orange solid 5px;
+  margin: 4px;
+}
+.big{
+  font-size: 2em;
+}
+body{
+  padding: 8px;
+}
+.pp{
+  padding: 1px;
+}
+
+   
+hr{
+  color: cornflowerblue;
+  margin: 0px 0px 8px 0px;
+}
+/* div{
+  padding: 0px 0px 8px 0px;
+} */
+
+a, a:visited , button {
+text-decoration:none;
+/*color:#774458;*/
+
+background-color: #212121;
+color: orange;
+  margin-right: 12px;
+  
+
+}
+.b {
+font-weight:bold; color:cornflowerblue;
+}
+.o{
+color:orange;
+}
+.r{
+color:brown;
+}
+.nowrap {
+white-space: nowrap;
+}
+.g {
+color:greenyellow;
+}
+body {background-color: #212121;}
+input, textarea, select {
+  background-color:#ababab ;
+  border-color: #ababab;
+  overflow:initial;
+  font-size:  1.0rem;
+  color: #141414;
+  width: 95%;
+
+}
+input[type=submit] {background-color:cornflowerblue}
+
+/* hovered table rows */
+tr.odd:hover {
+  background: #ece6a2;
+  color: #000000;
+}
+
+td {
+  margin:12px;
+}
+h1 {
+  font-size: 120%;
+}
+h2 {
+  font-size: 110%;
+}
+
+p, legend {
+  padding: 2px 10px 2px 2px;
+  margin-top: 2px;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+
+  /*font-size: inherit;*/
+}
+
+
+
+table {
+  margin-right: 6px;
+  margin-left: 6px;
+  margin-top: 0px;
+  width: 100vw;
+  /*max-width: 210mm;*/
+  border-collapse: collapse;
+}
+
+tr {
+  padding: 0.1em 0.4em;
+  border-bottom: 1px solid;
+}
+
+td {
+  padding: 2px 2px;
+  border: none;
+}
+
+th {
+  padding: 1px 4px;
+  border: none;
+  font-weight: normal;
+}
+
+pre {
+  /* padding: 1rem 1.4rem; */
+  padding: 0px;
+  margin: 0px;
+  max-width: 100%;
+  overflow: auto;
+}
+
+
+input, textarea {
+  /* border: none; */
+  border-color: #ababab;
+  margin-right: 8px;
+  background-color:#ababab;
+  color: #141414;
+/* width: 50%; */
+/* font-size: larger; */
+  /* display: inline-block; */
+  /* border-bottom: 1px solid #ccc; */
+}
+
+#c9{
+  width: 16ch;
+}
+
+#cadi{
+  border-color: #ababab;
+  margin-right: 8px;
+  background-color:#ababab;
+  color: #141414;
+  width: 100%;
+  height: 400px;
+}
+.blo{
+  display: block;
+}
+.inl{
+  display: inline;
+}
+/* .inl>*>*{
+  display: inline-block;
+} */
+
+.find, span{
+  color: greenyellow;
+  display: inline;
+  padding: 0px;
+  margin: 0px;
+}
+/* Handle 125% and 150% Windows 10 Font Scaling on 96dpi monitors */
+@media (min-resolution: 280dpi) {
+  * {
+       font-size: 1.8rem;
+       width: 100vw;
+       padding: 0;
+       margin: 0;
+       width: 100vw;
+       /* color: blue; */
+      }
+      
+      html,body {
+        width: 100vw;
+      }
+      
+      input, textarea{
+        font-size: 2rem;
+        width: 100vw;
+     }
+}

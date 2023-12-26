@@ -1,0 +1,52 @@
+extends layout
+
+block content
+    div.div21
+    hr
+    div.div31
+        each mv,mk in s.c[0].hmen
+            h1.lk
+                span.g #{mk}
+                a(href=mv.url) #{mv.descr}
+
+        
+        each ok in s.c[0].ooak
+            - oo=s.c[0].ooak.indexOf(ok)
+            a.inl(id="i"+oo href="form.html?t="+ s.r[0].t+"&id="+ok)
+            if - /[\d\.-]+/igm.test(s[s.r[0].t][ok]["dpy"])
+                div.g 
+                    span.o #{oo} 
+                    each g in s.c[0].ooakk
+                        - var f = s[s.r[0].t][ok][g]
+                          if - /ida/.test(kk)
+                                - vv=a[vv]["adr"]
+                        //- a.inl(id="ix"+oo href="form.html?t="+ s.r[0].t+"&id="+ok+"#"+g) //jump
+                        a.inl(id="ix"+oo href="form.html?t="+ s.r[0].t+"&id="+ok)
+                            p.inl.g #{g+":"+f+", "} 
+                            
+            else if - /(?<=hid )1/igm.test(v)
+                div
+                    span.o #{oo} 
+                    each g in s.c[0].ooakk
+                        - var f = s[s.r[0].t][ok][g]
+                        p.inl.r #{f}
+            else
+                div.pp
+                    span.o #{oo} 
+                    
+                    //- each f,g in s[s.r[0].t][ok].slice(0,c[0].nu)  // number of fields
+                    each g in s.c[0].ooakk
+                        - var f = s[s.r[0].t][ok][g]
+                        a.inl(id="ix"+oo href="form.html?t="+ s.r[0].t+"&id="+ok)
+                            if g != "ite"
+                                if f != ""
+                                    if sw!=""
+                                        p.inl #{g+":"+f+", "} 
+
+                                    else
+                                        - v3 = String(f).split(reg) 
+                                        - leen = v3.length
+                                        p.inl #{g+":"}
+                                        each vvv,kkk in v3
+                                            p.inl #{vvv.trim()}
+                                            span.find #{sw}

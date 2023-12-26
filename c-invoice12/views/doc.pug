@@ -1,0 +1,61 @@
+extends layout
+
+block content
+    //- div#d2 
+    //- p
+    //-     input#i9(type="search" name="inpp" size="15" value="" autofocus)
+    //- var h = hh
+   
+    
+    h1.inl #{t+" "+id} 
+    - var men = men 
+    div.div31
+        each  v,e in men 
+            - if(hmen.includes(e))
+                - var url = "cmd.html?cmd="+e
+                p.inl
+                    span.g #{e}
+                        a(href=url) #{v.descr}
+    div.div41
+        p
+        hr
+        div#d1 ccc
+            if(hh.id)
+                a.inl(href="form.html?t=adr&id="+hh.id)  #{hh.id}             
+                p.inl #{hh.surname}
+            else
+                if(rowsadr)
+                    - var o = rowsadr
+                    each val in o
+                        p.inl #{val}
+            
+
+        - var co = rr
+        div#d3
+            !{rr} 
+
+        div#d4
+        - var o = ords
+        
+        each val in o
+            p 
+                a.inl(href="ord2.html?t=ord&id=" + val.id) #{val.id} 
+                | #{val.oord},  #{val.invoice_amount}
+
+
+        
+
+        - var rr1 = rr1
+        div#d5
+            | !{rr1} 
+
+        br
+        br
+        
+        a.big(href="time.html") stopwatch2
+    
+        div
+    
+        p se  #{se}
+        p sess #{sess}
+            
