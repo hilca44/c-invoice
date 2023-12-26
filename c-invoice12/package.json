@@ -1,0 +1,36 @@
+{
+  "name": "c-invoice12",
+  "version": "0.0.12",
+  "description": "writing invoices",
+  "main": "inv12.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hilca44/c-invoice.git"
+  },
+  "keywords": [
+    "invoice",
+    "euer",
+    "einnahme",
+    "ueberschuss",
+    "rechnung"
+  ],
+  "author": "Carsten Hilbert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hilca44/c-invoice/issues"
+  },
+  "homepage": "https://github.com/hilca44/c-invoice#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "morgan": "^1.10.0",
+    "pbkdf2-password": "^1.2.1",
+    "pdfkit": "^0.14.0",
+    "pug": "^3.0.2",
+    "session-file-store": "^1.5.0"
+  }
+}
