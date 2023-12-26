@@ -17,7 +17,8 @@ programm for writing invoices
 installation linux (debian based)
 ---
 $ sudo apt install nodejs npm
-$ npm install
+$ npm install express
+$ npm i
 
 
 start c-invoice
