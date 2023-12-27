@@ -14,7 +14,7 @@ html
     
       div.div11
         p#tbkkl #{dd}
-        p#tbl #{ s.r[0].t}
+        p.inl#tbl #{ s.r[0].t}
         h1.inl
           input#c9(type="search" name="inpp" value="" title="ESC=focus" autofocus="autofocus")
           a(href="#" onclick="window.history.back()") back
@@ -26,10 +26,11 @@ html
             span.g #{k}
               //- - var menud=mendoo2[k].descr
               //- a( onclick="cmd3(\""+k+"\")" ) #{menud}
-              a(href=v.url id="i"+v.descr) #{v.descr}
+              a(href=v.url id="i"+k) #{v.descr}
         p ord: 
-          each id1 in s.n[0].reco
-            - var ode=s.n[0].abbre(s.o[id1].ord,18,2)
+          each ido in s.n[0].reco
+            - console.log(ido+" ido ")
+            - var ode=s.n[0].abbre(s.o[ido].ord,18,2)
             a(href="form.html?t=o&id="+id1) #{ode},
         p adr: 
           each idd in s.n[0].reca

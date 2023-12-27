@@ -24,7 +24,7 @@ block content
           each mv, mk in s.c[0].hmen 
             h1.inl
               span.g #{mk}
-              a(href=mv.url id="i"+mv.descr) #{mv.descr} 
+              a(href=mv.url id="i"+mk) #{mv.descr} 
 
           if  Object.keys(s.n[0].frm).length>1
             a(href="removefromview.html?id="+rrk) remove from view
@@ -42,7 +42,10 @@ block content
             input(type="hidden", name="cp", value= s.r[0].cp)
             br
             each v,k in s[s.r[0].t.toUpperCase()][0]
-              p.inl #{k}
+              if s.lll[k]
+                p.inl #{s.lll[k]}
+              else
+                p.inl #{k}
               if k=="ite" || k=="adr"
                 textarea(type="text" cols='auto' rows=9 id=k name=k value=v) #{rr[k]}
               else if k=="iii"
