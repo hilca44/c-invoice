@@ -40,5 +40,5 @@ dde date delivery
 div date invoice
 dpy date payed
 
-![Screenshot](https://github.com/hilca44/c-invoice/assets/113212346/60d5d0d2-c421-4770-820f-c6dc8c7d12fa)
+
 
