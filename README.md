@@ -29,7 +29,16 @@ $ node inv12.js
 insert invoice items
 ---
 field ite (item):
-10 pc 28.50 Description without line breake
+10 pc 28.50 Description without line break
 amount space unit space description
+
+translation
+---
+dkv date estimation of costs
+dco date confirmation
+dde date delivery
+div date invoice
+dpy date payed
+
 ![Screenshot](https://github.com/hilca44/c-invoice/assets/113212346/60d5d0d2-c421-4770-820f-c6dc8c7d12fa)
 
