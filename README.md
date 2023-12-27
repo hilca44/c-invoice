@@ -25,5 +25,11 @@ start c-invoice
 ---
 jump into c-invoice and type:
 $ node inv12.js
+
+insert invoice items
+---
+field ite (item):
+10 pc 28.50 Description without line breake
+amount space unit space description
 ![Screenshot](https://github.com/hilca44/c-invoice/assets/113212346/60d5d0d2-c421-4770-820f-c6dc8c7d12fa)
 
