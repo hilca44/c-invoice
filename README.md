@@ -29,8 +29,8 @@ $ node inv12.js
 insert invoice items
 ---
 field ite (item):
-10 pc 28.50 Description without line break
-amount space unit space description
+- 10 pc 28.50 Description without line break
+- amount space unit space description
 
 translation
 ---
