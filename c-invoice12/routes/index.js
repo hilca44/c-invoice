@@ -3,7 +3,7 @@
 //////////////////////////////////////////
 //////////////////////////////////////////
 const { homedir } = require('os');
- var home = homedir() + "/aaa/c-invoice/"
+ var home = homedir() + "/c-invoice/"
 //var home =  "~/c-invoice/"
 var ddb = home+"db/"
 // de deutsch
