@@ -3,17 +3,19 @@
 //////////////////////////////////////////
 //////////////////////////////////////////
 const { homedir } = require('os');
- var home = homedir() + "/c-invoice/"
+ var home = homedir() + "/aaa/c-invoice/"
 //var home =  "~/c-invoice/"
 var ddb = home+"db/"
+// de deutsch
+// en enlish
+var language = "en"
 //////////////////////////////////////////
 //////////////////////////////////////////
 var express = require('express');
 var rou = express.Router()
-// const pp = "public/db/"
 const pp = ddb
 
-// session
+// session var holds all data
 var s = {
   // c: {},  // configuration
   // m: {},
@@ -26,6 +28,8 @@ var s = {
 
 var conf = require("../public/settings")
 var m = require("../public/mod")
+var lg = require("../public/lan/" + language)
+// const lll= lg.lag
 var fs = require("fs");
 var PDF = require('pdfkit');
 var cookieParser = require('cookie-parser');
@@ -33,6 +37,7 @@ rou.use(cookieParser('my secret here'));
 rou.use(express.urlencoded({ extended: false }))
 
 function loa(s) {
+/** loads data from json files */
   for (let e of "AOEcmaoenr") {
     if (s[e]) { continue }
     getTblObj(e, function (jjj) {
@@ -52,15 +57,18 @@ if (!fs.existsSync(ddb)){
 }
 
 s = loa(s)
+dd(home,"homedir")
 
-dd(home)
 function restrict2(req, res, next) {
+  /** this route runs in front every url */
   s.r[0] = req.query
+  s.lll=lg["lag"]
   // 
   if (s.r[0].addto) {
     s.c[0].addto = Number(s.c[0].addto) * -1
   }
 
+  // set values for recent lists on n
   if (
     s.r[0].id!=nulll
     && Number(s.r[0].id) > 0 
@@ -71,11 +79,9 @@ function restrict2(req, res, next) {
       if (rl.includes(s.r[0].id) && s.r[0].id>1) {
         //  collect last ids
         rl.splice(rl.indexOf(s.r[0].id), 1)
-
         rl.unshift(Number(s.r[0].id))
       } else {
         rl.unshift(s.r[0].id)
-
       }
 
       if (s.c[0].addto > 0) {
@@ -94,22 +100,17 @@ function restrict2(req, res, next) {
 
     s.c[0].t = s.r[0].t
   }
-  // s.c[0].def2 = conf.def2
 
-  // let gg= __path.split("/")
   let tte = __dirname.split("/")
   s.c[0].scrnme = tte.slice(tte.length - 2, tte.length - 1)
   s.dd = dd(s.c[0].nu) // dump
   savObj("r", s.r)
   savObj("n", s.n)
   s.n[0].abbre = makeFileNameFromStr
-  // sess.rr1=dd(g)
   res.cookie('remember', 1, {
     maxAge: 60000 * 300
   }); // millisec 60000=60s
-  // if (r) {
-  res.cookie('q', s.r
-  );
+  res.cookie('q', s.r  );
 
   if (req.cookies.remember) {
 
@@ -122,40 +123,6 @@ function restrict2(req, res, next) {
 
 rou.all("*", restrict2)
 ///////////////////////
-
-
-function urlrep(ur, keva, ta, cb) {
-  /**
-   * 
-   */
-  var tq = ur.split("?")
-  // tq[1]=""
-  qs2o(tq[1], function (oo) {
-    var ur1, ke1, ke2
-    for (var k in keva) {
-      ke1 = new RegExp(k + "\=", "i")
-      ke2 = new RegExp("(?<=" + k + "\=).+(?=[&]|$)", "i")
-      oo[k] = keva[k]
-      // if(oo.includes(k)){
-
-      // ur=ur.replace(ke2,keva[k])
-      // }else{
-      //   ur=ur+"&"+k+"="+keva[k]
-      // }
-    }
-    o2qs(oo, function (u1) {
-
-      var ke3 = new RegExp(".{2,7}(?=\.html)", "i")
-      ur = tq[0] + "?" + u1
-      if (ta != "") {
-        ur = ur.replace(ke3, ta)
-      }
-
-
-      cb(ur)
-    })
-  })
-}
 
 function getPropByString(obj, propString) {
   if (!propString)
@@ -197,6 +164,11 @@ function mkmen(req, it) {
     // urlrep(req.url, c.keva, c.targ, function (ui) {
     m.doo2[cmd]["url"] = u
     refs[cmd] = m.doo2[cmd]
+
+    // language
+    if( s.lll[refs[cmd].descr]){
+      refs[cmd].descr=s.lll[refs[cmd].descr]
+    }
     // })
   }
   return refs
@@ -678,36 +650,6 @@ function wordwrap(str, cols, ind = 6, splitter = " ", callback) {
   formatedString = " ".repeat(ind) + atext.join("\n" + " ".repeat(ind + 1))
   // callback(formatedString)
   callback(atext)
-}
-
-
-function qs2o(qs, cb) {
-  /**
-   * querystring to object
-   */
-  var ob = {}
-  for (var a of qs.split("&")) {
-    var aa = a.split("=")
-    ob[aa[0]] = aa[1]
-  }
-  cb(ob)
-}
-
-function o2qs(ob, cb) {
-  /*
-  obj to query string
-  */
-  var st, qs
-  var aa = []
-  for (var a in ob) {
-    st = a + "=" + ob[a]
-    if (ob[a] != null
-    ) {
-      aa.push(st)
-    }
-  }
-  qs = aa.join("&")
-  cb(qs)
 }
 
 
